@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
-import { Button, View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { MapView } from 'expo';
 import { connect } from 'react-redux';
+import { Button } from 'react-native-elements';
 
 import * as actions from '../actions';
 
@@ -50,7 +51,7 @@ class MapScreen extends Component {
           <Button
             large
             title="Search this Area"
-            color="#009688"
+            backgroundColor="#009688"
             icon={{ name: 'search' }}
             onPress={this.onButtonPress}
           />
@@ -64,8 +65,8 @@ const styles = {
   buttonContainer: {
     position: 'absolute',
     bottom: 20,
-    left: 20,
-    right: 20,
+    left: 0,
+    right: 0,
     // backgroundColor: '#009688',
     // textColor: '#fff'
   }
