@@ -25,9 +25,9 @@ export const fetchJobs = (region) => async (dispatch) => {
   try {
     const zip = await reverseGeocode(region);
     const url = buildJobsUrl(zip);
-    const { data } = await fetch(url);
-    dispatch({ type: FETCH_JOBS, payload: data });
-    console.log(data);
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    dispatch({ type: FETCH_JOBS, payload: responseJson.results });
   } catch (e) {
     console.error(e);
   }
